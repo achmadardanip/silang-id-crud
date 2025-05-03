@@ -16,7 +16,8 @@ const UserCreatePage = () => {
         setErrors({});
         setIsLoading(true); // Mulai loading
         try {
-            await axiosInstance.post('/users', { name, email, password });
+            const emailToLower = email.toLowerCase();
+            await axiosInstance.post('/users', { name, emailToLower, password });
             navigate('/users');
         } catch (err) {
             console.error("Create user error:", err);

@@ -43,7 +43,8 @@ const UserEditPage = () => {
         e.preventDefault();
         setErrors({});
         setIsLoading(true); // Mulai loading submit
-        const payload = { name, email };
+        const emailToLower = email.toLowerCase();
+        const payload = { name, email: emailToLower };
         if (password) {
             payload.password = password;
         }

@@ -19,6 +19,7 @@ const LoginPage = () => {
     setError('');
     setIsLoading(true); // Mulai loading
     try {
+    //   const emailToLower = email.toLowerCase();
       const response = await axiosInstance.post('/login', { email, password });
       const token = response.data.token;
       if (token) {

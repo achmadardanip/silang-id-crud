@@ -15,6 +15,7 @@ const ForgotPasswordPage = () => {
     setError('');
     setIsLoading(true); // Mulai loading
     try {
+    //   const emailToLower = email.toLowerCase();
       const response = await axiosInstance.post('/forgot-password', { email });
       setMessage(response.data.message || 'Password reset link sent! Check your email.');
     } catch (err) {

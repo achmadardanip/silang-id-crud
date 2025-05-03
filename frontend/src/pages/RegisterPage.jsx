@@ -23,7 +23,8 @@ const RegisterPage = () => {
     }
     setIsLoading(true); // Mulai loading
     try {
-      await axiosInstance.post('/register', { name, email, password, password_confirmation: passwordConfirmation });
+      const emailToLower = email.toLowerCase();
+      await axiosInstance.post('/register', { name, emailToLower, password, password_confirmation: passwordConfirmation });
       setSuccessMessage('Registration successful! You can now log in.');
       // Optionally clear form
       // setName(''); setEmail(''); setPassword(''); setPasswordConfirmation('');
