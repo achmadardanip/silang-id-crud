@@ -60,17 +60,17 @@ const ResetPasswordPage = () => {
   };
 
   return (
-    <div>
+    <div style={{ paddingTop: '5vh' }}>
       {/* Tampilkan loader jika sedang proses */}
       {isLoading && <LoadingIndicator message="Resetting password..." />}
-
-      <form onSubmit={handleSubmit} style={{ filter: isLoading ? 'blur(1px)' : 'none' }}>
          {/* Bagian branding (logo & teks) jika ada */}
          <div style={{ textAlign: 'center', marginBottom: '25px' }}>
              <img src="https://www.silang.id/wp-content/uploads/2024/05/Horizontal-Logo.png" alt="Silang.id Logo" style={{ maxWidth: '250px', height: 'auto', marginBottom: '10px' }} />
              <h2 style={{ margin: 0, fontSize: '1.2em', color: '#444' }}>Silang.id Admin Portal</h2>
          </div>
          {/* --- Akhir Branding --- */}
+      <form onSubmit={handleSubmit} style={{ filter: isLoading ? 'blur(1px)' : 'none' }}>
+
 
         <h2>Reset Your Password</h2>
         {/* Tampilkan pesan sukses atau error */}
