@@ -1,8 +1,15 @@
 # Silang.id Admin Portal - Full Stack Application Documentation
 
 **Version:** 1.0
+
 **Date:** May 3, 2025
+
 **Developed For:** Silang.id Full Stack Developer Recruitment
+
+**GitHub:** https://github.com/achmadardanip/silang-id-crud 
+
+**By:** Achmad Ardani Prasha
+
 
 ---
 
@@ -223,24 +230,43 @@ This Admin Portal provides core functionalities for managing users.
 * **Login:**
     * Navigate to `http://localhost:5173/login`.
     * Enter the email and password of a registered administrator user.
+      
+      ![image](https://github.com/user-attachments/assets/d330bb19-7ce6-420b-9327-c5027cb95013)
+
     * Upon successful login, you will be redirected to the `/dashboard`.
-    * *(Screenshot of Login Page)*
+
+      ![image](https://github.com/user-attachments/assets/9dd09d51-e5fe-4f3b-809f-be57ae0dc8d4)
+
+      
 * **Logout:**
     * While logged in, click the "Logout" button in the top-right corner of the navigation bar.
     * A confirmation dialog ("Are you sure you want to logout?") will appear. Click "OK".
+
+      ![image](https://github.com/user-attachments/assets/760a2db2-b843-4841-b2fb-733688e7b398)
+
     * You will be redirected back to the `/login` page.
-    * *(Screenshot showing Logout button)*
+
 * **Forgot Password:**
     * On the Login page, click the "Forgot Password?" link.
     * Enter the email address associated with your admin account and click "Send Password Reset Link".
+
+      ![image](https://github.com/user-attachments/assets/7e350102-3f79-4a8c-8ecf-37e1b9e2042e)
+
     * Check your **Mailtrap inbox** (not your real email) for the password reset email.
-    * *(Screenshot of Forgot Password Page)*
+      
+      ![image](https://github.com/user-attachments/assets/6c79b792-9230-48b4-b2af-46018426b601)
+
 * **Reset Password:**
     * Click the "Reset Password" link/button within the email in Mailtrap. This will open the frontend reset page (e.g., `http://localhost:5173/password-reset/TOKEN?email=...`).
     * Enter the email address (it might be pre-filled), your new desired password, and confirm the new password.
     * Click "Reset Password". If successful, you should see a success message and potentially be redirected to the Login page.
-    * *(Screenshot of Reset Password Page)*
-* **Registration:** (If enabled) The Register page allows creating a new user account directly.
+      
+      ![image](https://github.com/user-attachments/assets/ab32c5db-eb20-436d-a0ad-e30488de655c)
+
+* **Registration:** The Register page allows creating a new user account directly.
+
+  ![image](https://github.com/user-attachments/assets/b6d46655-7f69-482a-9dc3-df8478a4e6b1)
+
 
 ### 4.2. Dashboard (`/dashboard`)
 
@@ -256,7 +282,9 @@ This Admin Portal provides core functionalities for managing users.
     * `Distribusi Tipe Acara`: Doughnut chart showing dummy event type distribution.
 * **Recent Users:** Lists the 5 most recently registered users (real data fetched from the user list), linking to their edit page.
 * **Quick Actions:** Provides quick links/buttons to common tasks like "Tambah Pengguna Baru" and "Kelola Semua Pengguna".
-* *(Screenshot of Dashboard Page)*
+  
+  ![image](https://github.com/user-attachments/assets/9dd09d51-e5fe-4f3b-809f-be57ae0dc8d4)
+
 
 ### 4.3. User Management (`/users`)
 
@@ -266,22 +294,31 @@ This Admin Portal provides core functionalities for managing users.
     * **Sorting:** Click on column headers (ID, Name, Email, Created At, Updated At) to sort the data. The "Actions" column is not sortable.
     * **Search:** Use the search box above the table to filter users. The search is case-insensitive and looks across ID, Name, Email, and the formatted Created At/Updated At columns.
     * **Pagination:** The table includes pagination controls (Previous, Next, page numbers) to navigate through large user lists.
-    * *(Screenshot of Users Page Table)*
+
+      ![image](https://github.com/user-attachments/assets/55c6ee12-6cb9-4737-ae27-34845b1fe784)
+
 * **Create User:**
     * Click the "Create New User" button.
     * Fill in the Name, Email, and Password fields.
     * Click "Create User". You will be redirected back to the user list upon success.
-    * *(Screenshot of Create User Form)*
+
+      ![image](https://github.com/user-attachments/assets/f1d63ee8-eedf-494c-90a2-a83faa712c2a)
+
 * **Edit User:**
     * Click the "Edit" button next to a user in the table.
     * Modify the Name and/or Email.
     * Optionally, enter a new password to change it (leave blank to keep the current one).
     * Click "Save Changes".
-    * *(Screenshot of Edit User Form)*
+
+      ![image](https://github.com/user-attachments/assets/a50f24a9-2d54-4ee8-89dd-742f6c3ffb26)
+
 * **Delete User:**
     * Click the "Delete" button next to a user.
     * Confirm the deletion in the browser prompt.
     * The user will be removed from the list upon success. *Note: You cannot delete your own logged-in account.*
+
+      ![image](https://github.com/user-attachments/assets/25aa7c1d-7092-460a-a9b4-3e334038839e)
+
 
 ### 4.4. Export Data
 
@@ -599,7 +636,44 @@ This section verifies how the developed application meets the specific requireme
     * *Implementasikan autentikasi token:* **Met.** The login process retrieves a token, stores it (in `localStorage`), and the Axios interceptor includes it in subsequent requests. Logout clears the token. User context (`AuthContext`) manages auth state.
     * *(Implicit Requirement: Routing)* **Met.** `react-router-dom` was used to set up application routing (`App.jsx`). A `ProtectedRoute.jsx` component was created to restrict access to authenticated sections based on the presence of the auth token.
 
-**Summary:** The developed Silang.id Admin Portal application successfully meets all the specified functional requirements for both the backend (Laravel API) and frontend (ReactJS SPA), demonstrating core full-stack development capabilities.
-
 ---
-*End of Document*
+
+## Summary
+
+The developed Silang.id Admin Portal application successfully meets all the specified functional requirements for both the backend (Laravel API) and frontend (ReactJS SPA), demonstrating core full-stack development capabilities.
+
+Furthermore, several additional features and refinements were implemented during the development process to enhance usability, functionality, and robustness beyond the initial baseline requirements:
+
+**Key Additional Features Developed:**
+
+* **Complete Authentication Flow:** Implemented the full Forgot Password and Reset Password functionality, including backend logic, API endpoints, frontend forms, email handling (via Mailtrap locally), and custom email notifications pointing to the correct frontend reset route.
+* **Enhanced User Management Table:**
+    * Replaced the basic HTML table with the `react-data-table-component` library on the Users page.
+    * Enabled column sorting (excluding the "Actions" column).
+    * Implemented case-insensitive search functionality across relevant user data fields (excluding "Actions").
+    * Added pagination managed by the DataTable component.
+* **Data Export:**
+    * Integrated export functionality on the Users page for **CSV** and **Excel** formats.
+    * Ensured exported files contain the **entire user dataset**, regardless of current filters or pagination.
+    * Excluded the "Actions" column from exported data.
+* **Enhanced Dashboard:**
+    * Developed a more informative dashboard with KPI statistic cards (using real-time total user count fetched from a dedicated API endpoint and dummy data for other stats).
+    * Added placeholders for charts (User Growth Line Chart, Event Type Doughnut Chart) using `react-chartjs-2`.
+    * Included a "Recent Users" list displaying the latest 5 registered users fetched from the API.
+    * Added a "Quick Actions" section for easy navigation.
+* **Backend Optimizations & Additions:**
+    * Created a dedicated API endpoint (`/api/stats/user-count`) and controller method to efficiently retrieve the total user count directly from the database.
+    * Implemented consistent lowercase handling for emails on the backend during login, forgot password, and reset password processes.
+* **UI/UX Enhancements:**
+    * Implemented custom loading indicators (`ThreeDots` from `react-loading-indicators`) with a background overlay effect across the application (initial load, auth checks, form submissions, table loading) for a better user experience.
+    * Added Silang.id branding (logo and text) to authentication forms (Login, Register, Forgot Password, Reset Password).
+    * Set a custom browser tab title ("Silang.id Admin Portal") and favicon for the application.
+    * Added the favicon logo next to the title in the main application navbar.
+    * Made authentication form containers wider for better readability.
+    * Added a custom "by: [Name]" credit line with a LinkedIn link in the application footer.
+    * Implemented a browser confirmation dialog (`window.confirm`) before executing the logout action.
+* **Data Consistency:** Implemented automatic conversion of user-provided emails to lowercase on the frontend forms (Login, Register, Forgot/Reset Password, Edit User) before submitting to the API.
+* **Date Formatting:** Implemented clear date and time formatting (`DD/MM/YYYY HH:MM:SS`) for "Created At" and "Updated At" columns in the user table using the `date-fns` library.
+
+These additions create a more feature-rich, user-friendly, and robust administration tool compared to the initial basic requirements.
+
