@@ -1,0 +1,132 @@
+/* Basic Layout Styling */
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+  }
+  
+  .navbar-brand a {
+    /* font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none; */
+
+    display: inline-flex;
+    align-items: center; /* Pusatkan logo dan teks secara vertikal */
+    text-decoration: none; /* Hapus garis bawah default link */
+    color: #333; /* Sesuaikan warna jika perlu */
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .navbar-logo {
+    /* Atur ukuran logo favicon */
+    height: 24px; /* Sesuaikan tinggi sesuai keinginan */
+    width: auto; /* Lebar otomatis menjaga rasio */
+  
+    /* Beri jarak antara logo dan teks */
+    margin-right: 8px; /* Sesuaikan jarak jika perlu */
+  
+    /* Pastikan alignment vertikal sudah pas (opsional, flex di atas biasanya cukup) */
+    /* vertical-align: middle; */
+  }
+  
+  .navbar-links a {
+    margin-left: 1rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+  .navbar-links a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  .navbar-user {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-user span {
+    margin-right: 1rem;
+    color: #555;
+  }
+  
+  .logout-button {
+    padding: 0.4rem 0.8rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .logout-button:hover {
+    background-color: #c82333;
+  }
+  
+  .main-content {
+    flex-grow: 1; /* Takes remaining vertical space */
+    padding: 2rem;
+  }
+  
+/* Tambahkan ini ke file CSS Anda */
+.footer {
+    /* Style footer yang sudah ada */
+    padding: 1rem 2rem;
+    background-color: #f1f1f1;
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    margin-top: auto;
+    line-height: 1.5;
+}
+
+.footer-credit {
+    margin-top: 0.3rem; /* Sedikit jarak dari baris copyright */
+    font-size: 0.9em; /* Ukuran font sedikit lebih kecil */
+    color: #666; /* Warna teks 'by:' */
+}
+
+.footer-credit a {
+    color: #007bff; /* Warna link */
+    text-decoration: none; /* Hapus garis bawah default */
+    font-weight: 500; /* Sedikit tebal (opsional) */
+}
+
+.footer-credit a:hover {
+    text-decoration: underline; /* Garis bawah saat di-hover */
+}
+  
+  /* Basic Responsiveness */
+  @media (max-width: 768px) {
+      .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+      }
+      .navbar-links {
+          margin-top: 0.5rem;
+          margin-left: 0; /* Reset margin */
+      }
+       .navbar-links a {
+           margin-left: 0; /* Reset margin */
+           margin-right: 1rem; /* Add space between links */
+           display: block; /* Stack links vertically if needed */
+           margin-bottom: 0.3rem;
+       }
+      .navbar-user {
+          margin-top: 0.5rem;
+          width: 100%; /* Take full width */
+          justify-content: space-between; /* Space out name and button */
+      }
+  }
